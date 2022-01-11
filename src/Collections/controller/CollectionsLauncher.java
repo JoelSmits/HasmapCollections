@@ -17,7 +17,7 @@ public class CollectionsLauncher {
         System.out.println(wordMap.getNumberOfUniqueWords());
 
         for (String word : wordMap.getWordsSorted()) {
-            System.out.printf("%s\t\t%d\n", word, wordMap.getWordCount(word));
+            System.out.printf("%-18s%d\n", word, wordMap.getWordCount(word));
         }
     }
 
