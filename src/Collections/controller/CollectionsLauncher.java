@@ -1,5 +1,6 @@
 package Collections.controller;
 
+import Collections.model.WordLinesMap;
 import Collections.model.WordMap;
 import Collections.model.WordSet;
 
@@ -11,6 +12,7 @@ public class CollectionsLauncher {
 
     public static void main(String[] args) {
         WordMap wordMap = new WordMap();
+        WordLinesMap wordLinesMap = new WordLinesMap();
 //        returnWordSet();
 
         wordMap.readFromFile("src/Collections/resources/input.txt");
@@ -18,6 +20,12 @@ public class CollectionsLauncher {
 
         for (String word : wordMap.getWordsSorted()) {
             System.out.printf("%-18s%d\n", word, wordMap.getWordCount(word));
+        }
+
+        wordLinesMap.readFromFile("src/Collections/resources/input.txt");
+        System.out.println(wordLinesMap.getNrOfUniqueWords());
+        for (String word : wordLinesMap.getWordsSorted()) {
+            System.out.printf("%-18s%s\n", word, wordLinesMap.getWordLineNrs(word));
         }
     }
 
